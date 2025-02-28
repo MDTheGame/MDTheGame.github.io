@@ -20,9 +20,10 @@
 @media (max-width: 768px) {
     #logonname {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
+
     #seanmenu {
-        justify-content: center;
+        justify-content: flex-end;
     }
 }
