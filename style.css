@@ -16,3 +16,13 @@
     display: flex;
     justify-content: flex-end;
 }
+
+@media (max-width: 768px) {
+    #logonname {
+        flex-direction: column;
+        align-items: center;
+    }
+    #seanmenu {
+        justify-content: center;
+    }
+}
