@@ -2,36 +2,55 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: black; /* Чёрный фон */
-    font-family: 'MS Sans Serif', sans-serif; /* Шрифт, используемый в Windows 95 */
-    color: white; /* Белый текст для контраста с чёрным фоном */
+    font-family: "Press Start 2P", monospace;
+    color: white;
 }
 
 body {
-    border: 2px solid white; /* Белая рамка вокруг всего контента */
-    padding: 10px;
-    position: relative; /* Для позиционирования sidebar */
+    background-color: black; /* Чёрный фон */
 }
 
+/* Главный экран с аватаркой и текстом */
+#mainScreen {
+    height: 100vh; /* На весь экран */
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    background-image: url('avatar.png'); /* Фоновая аватарка */
+    background-size: cover; /* Растягиваем фон на весь экран */
+    background-position: center; /* Центрируем фон */
+    background-repeat: no-repeat; /* Убираем повторение фона */
+}
+
+#gameTitle {
+    font-size: 48px; /* Размер текста */
+    text-align: center; /* Центрируем текст */
+    color: white; /* Белый текст */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для текста */
+}
+
+/* Логотип и меню */
 #logoname {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Логотип слева, меню справа */
     padding: 10px;
     width: 100%;
-    background-color: black; /* Чёрный фон */
-    border: 2px solid white; /* Белая рамка */
+    background-color: black; /* Чёрный фон для верхней панели */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0;
+    z-index: 1000; /* Чтобы логотип и меню были поверх других элементов */
+    border-bottom: 2px solid white; /* Обводка (рамка) для верхней панели */
 }
 
-#seanmenu {
-    display: flex;
-    justify-content: flex-end; /* Меню выравнивается по правому краю */
-    align-items: center;
-    width: auto; /* Ширина по содержимому */
-    margin: 0;
-    padding: 0;
-    line-height: 0;
-    font-size: 0;
+#logoLink {
+    text-decoration: none; /* Убираем подчёркивание у ссылки */
+}
+
+#logo {
+    height: 64px;
+    width: 150px;
+    border: 2px solid white; /* Белая рамка вокруг логотипа */
 }
 
 #seanmenu img {
@@ -75,13 +94,72 @@ body {
     color: white; /* Белый текст */
     text-decoration: none; /* Убираем подчёркивание */
     font-size: 18px; /* Увеличиваем размер текста */
-    display: block; /* Ссылки занимают всю ширину */
+    display: flex; /* Используем flex для выравнивания */
+    align-items: center; /* Выравниваем элементы по центру */
     padding: 10px; /* Отступы внутри ссылок */
+    background-color: #333; /* Серый фон для ссылок */
+    border: 2px solid white; /* Белая рамка */
 }
 
 #menuList a:hover {
-    background-color: #333; /* Изменение фона при наведении */
+    background-color: #555; /* Изменение фона при наведении */
     text-decoration: underline; /* Подчёркивание при наведении */
+}
+
+#menuList a img {
+    margin-right: 10px; /* Отступ между изображением и текстом */
+    background-color: transparent; /* Убираем серый фон у изображений */
+}
+
+/* Основной контент */
+#content {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: black; /* Чёрный фон */
+    border: 2px solid white; /* Белая рамка */
+}
+
+#content h2 {
+    color: white; /* Белый цвет заголовков */
+    margin-bottom: 20px; /* Увеличиваем отступ снизу */
+    font-size: 24px; /* Размер шрифта заголовков */
+}
+
+#content p {
+    color: white; /* Белый цвет текста */
+    margin-bottom: 20px; /* Увеличиваем отступ снизу */
+    font-size: 16px; /* Размер шрифта текста */
+    line-height: 1.6; /* Увеличиваем межстрочный интервал */
+}
+
+#content ul, #content ol {
+    color: white; /* Белый цвет текста */
+    margin-left: 20px; /* Отступ слева для списка */
+    margin-bottom: 20px; /* Увеличиваем отступ снизу */
+}
+
+#content ul li, #content ol li {
+    margin-bottom: 15px; /* Увеличиваем отступ между элементами списка */
+    line-height: 1.6; /* Увеличиваем межстрочный интервал */
+}
+
+#content a {
+    color: white; /* Белый цвет ссылок */
+    text-decoration: underline; /* Подчёркивание ссылок */
+}
+
+#content a:hover {
+    color: #ccc; /* Изменение цвета ссылки при наведении */
+}
+
+/* Специальные стили для раздела "Планы разработчика" */
+#plans ol {
+    margin-left: 30px; /* Увеличиваем отступ слева для списка */
+}
+
+#plans ol li {
+    margin-bottom: 20px; /* Увеличиваем отступ между элементами списка */
+    line-height: 1.8; /* Увеличиваем межстрочный интервал */
 }
 
 @media (max-width: 768px) {

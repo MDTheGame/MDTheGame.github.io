@@ -12,10 +12,3 @@ document.addEventListener("click", function (event) {
         sidebar.classList.remove("active"); // Закрываем sidebar
     }
 });
-
-// Обработка нажатия на "Написать автору через сайт"
-const contactAuthor = document.getElementById("contactAuthor");
-contactAuthor.addEventListener("click", function (event) {
-    event.preventDefault(); // Отменяем переход по ссылке
-    alert("Функция 'Написать автору через сайт' будет реализована позже.");
-});
