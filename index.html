@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" type="image/png" href="avatar.png">
         <title>MD: The Game</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <button id="scrollToTop">↑ Наверх</button>
+        <canvas id="snowCanvas"></canvas>
+        <section id="about-game" class="fade-in">
+            <!-- Контент -->
+        </section>
         <!-- Главный экран с текстом и аватаркой -->
         <div id="mainScreen">
+            <div id="overlay"></div>
             <h1 id="gameTitle">MD: The Game</h1>
         </div>
 
         <!-- Логотип и меню -->
         <div id="logoname">
-            <a href="#mainScreen" id="logoLink">
-                <img id="logo" src="logo.png" title="MD: The Game" height="64px" width="150px">
-            </a>
+            <div id="leftContainer">
+                <a href="#mainScreen" id="logoLink">
+                    <img id="logo" src="logo.png" title="MD: The Game" height="64px" width="150px">
+                </a>
+                <span id="gameTitleNav" style="display: none;">MD: The Game</span>
+            </div>
             <div id="seanmenu">
                 <img id="menuIcon" src="menu.png" title="Menu" height="38px" width="38px">
             </div>
@@ -95,8 +104,25 @@
                     Если у вас есть вопросы или предложения, вы можете написать мне в <a href="https://t.me/nthecutedrone">Telegram.</a>
                 </p>
             </section>
-        </div>
 
+            <div id="tetrisGame">
+                <canvas id="tetrisCanvas" width="300" height="600"></canvas>
+                <div id="tetrisInfo">
+                    <p>Счет: <span id="score">0</span></p>
+                    <p>Уровень: <span id="level">1</span></p>
+                    <p>Следующая фигура:</p>
+                    <canvas id="nextPieceCanvas" width="100" height="100"></canvas><br>
+                    <button id="startButton">Начать игру</button><br>
+                </div>
+                <!-- Виртуальные кнопки для управления -->
+                <div id="mobileControls">
+                    <button id="leftButton">←</button>
+                    <button id="rightButton">→</button>
+                    <button id="rotateButton">↻</button>
+                    <button id="downButton">↓</button>
+                </div>
+            </div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
